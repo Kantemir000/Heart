@@ -1,0 +1,37 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo{
+        width: 250px;
+        img{
+            display: block;
+            width: 100%;           
+        }
+    }
+    &__official{
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 500px;
+        text-align: center;
+        span{
+            display: block;
+            font-size: 18px;
+        }
+    }
+    &__number{
+        display: block;
+        font-size: 18px;
+        font-weight: 700px;
+        color: #ffffff;
+        text-decoration: none;
+        &:hover{
+            color: #ffffff;
+        }
+    }
+    &__contact{ /* чтобы кнопка была прижата к краю */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
