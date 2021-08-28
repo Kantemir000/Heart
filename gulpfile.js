@@ -13,7 +13,7 @@ gulp.task('server', function() {  /* task - задача */ /* 'название
         server: {
             baseDir: "src" /* наш live server будет запускаться из папки src */
         },
-        browser: 'google chrome',
+        browser: 'safari', /* google chrome */
         open: 'local'
     });
 });
