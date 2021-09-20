@@ -22,7 +22,7 @@
 		right: -66px;
 	}
 	.slick-dots{
-		list-style: none;
+		list-style: none; //убирает точки
 		display: flex !important;
 		justify-content: center;
 		margin-top: 20px;
@@ -38,4 +38,22 @@
 			color: #fff;
 		}	
 	}	
+}
+
+@media (max-width: 1024px){
+    .slider{
+        &__inner{
+            width: 60%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 575px){
+    .slider{
+        &__inner{
+            width: 90%;
+        }
+    }
 }

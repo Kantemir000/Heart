@@ -33,3 +33,24 @@
         }
     }
 }
+
+@media (max-width: 991px){
+    .advantages__items{
+        margin: 60px 25px 0 25px;
+    }
+    .advantages__item{
+        max-width: 224px;
+    }
+}
+@media (max-width: 767px){
+    .advantages{
+        &__items{
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        &__item{
+            margin: 15px 40px 0 40px;
+        }
+    }
+}
