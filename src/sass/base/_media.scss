@@ -1,3 +1,13 @@
+@media (max-width: 1024px){
+    .slider{
+        &__inner{
+            width: 60%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
 @media (max-width: 991px){
     .header{
         &__logo{
@@ -117,6 +127,11 @@
     .advice{
         min-height: 550px;
         padding: 50px 0 45px 0;
+    }
+    .slider{
+        &__inner{
+            width: 90%;
+        }
     }
     @media (max-width: 430px){
         .promo{

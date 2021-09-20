@@ -34,6 +34,7 @@ gulp.task('styles', function() {
 gulp.task('watch', function() { /* чтобы gulp следил за изменениями html и стилестических файлов */
     gulp.watch("src/sass/**/*.+(scss|sass)"/*отследит изменения*/ , gulp.parallel('styles') /* после gulp запустит style*/)
     gulp.watch("src/*.html").on('change'/*  изменение файла */, browserSync.reload);
+    gulp.watch("src/js/script.js").on('change'/*  изменение файла */, browserSync.reload);
 })
 
 gulp.task('default', gulp.parallel('watch', 'server', 'styles')); /* одной коммандой запустить весь функционал */
