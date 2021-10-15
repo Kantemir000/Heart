@@ -2,6 +2,7 @@
 /* html структура будет запускаться, когда будет готова (ready) */
 /* $ - библиотека jquery */
 /* Эта структура нужна, чтобы когда загружали наш слайдер тогда, когда наш документ полностью готов*/
+/* для того чтобы наши скрипты загружались только тогда когда вёрстка построенная как документ будет готова */
 $(document).ready(function(){ 
     /* slick это метод, который помогает запустить слайдер */
     $('.slider__inner').slick({      
@@ -51,7 +52,30 @@ $(document).ready(function(){
             })
         });
     };
-
     toggleSlide('.catalog-item__link'); //вызываем функцию 
     toggleSlide('.catalog-item__back'); //вызываем функцию 
+
+    //Modal
+
+    /* $('[data-modal=consultation]').fadeOut(); */ /* красиво, анимированно скрыть какие-то элементы */
+    $('[data-modal=consultation]').on('click', function(){
+        $('.overlay, #consultation').fadeIn('slow');
+    });
+
+    $('.modal__close').on('click', function(){
+        $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+    });
+
+/* Модальное окно */
+/*  $('.button_mini').on('click', function(){
+    $('.overlay, #order').fadeIn('slow');
+    }); */
+    
+    /* Динамически меняющееся модальное окно */
+    $('.button_mini').each(function(i){ /* each для каждого элемента будет выполняться какая-то операция */
+        $(this).on('click', function(){
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text()); /* eq получать определённый элемент по порядку. text(любой текст) */
+            $('.overlay, #order').fadeIn('slow');
+        })
+    });
 }); 
