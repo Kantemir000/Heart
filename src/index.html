@@ -103,10 +103,10 @@
                 Просто заполните форму заявки <br>
                 и мы перезвоним вам в течении 10 минут
             </div>
-            <form class="feed-form" action="#"> 
-                <input name="text" required placeholder="Ваше имя" type="text">
-                <input name="number" required placeholder="Ваш телефон" type="number">
-                <input name="email" required placeholder="Ваш E-mail" type="email">
+            <form id="consultation-form" class="feed-form" action="#"> 
+                <input name="name" placeholder="Ваше имя" type="text"> <!-- required с помощью плагига-->
+                <input name="number" placeholder="Ваш телефон" > <!-- type="number" для работы маски ввода убрать--><!-- required с помощью плагига-->
+                <input name="email" placeholder="Ваш E-mail" type="email"> <!-- required с помощью плагига-->
                 <button class="button button_submit">заказать консультацию</button>
             </form>
         </div>
@@ -692,9 +692,9 @@
             <h2 class="modal__subtitle">Просто заполните форму заявки</h2>
             <h3 class="modal__descr">и мы перезвоним вам в течении 10 минут</h3>
             <form class="feed-form feed-form_mt25" action="#"> 
-                <input name="text" required placeholder="Ваше имя" type="text">
-                <input name="number" required placeholder="Ваш телефон" type="number">
-                <input name="email" required placeholder="Ваш E-mail" type="email">
+                <input name="name"  placeholder="Ваше имя" type="text"> <!-- required с помощью плагига-->
+                <input name="number" placeholder="Ваш телефон" > <!-- type="number" для работы маски ввода убрать--><!-- required с помощью плагига-->
+                <input name="email" placeholder="Ваш E-mail" type="email"> <!-- required с помощью плагига-->
                 <button class="button button_submit">заказать консультацию</button>
             </form>
         </div>
@@ -703,9 +703,9 @@
             <h2 class="modal__subtitle">Ваш заказ:</h2>
             <h3 class="modal__descr">Пульсометр Polar FT1</h3>
             <form class="feed-form feed-form_mt25" action="#"> 
-                <input name="text" required placeholder="Ваше имя" type="text">
-                <input name="number" required placeholder="Ваш телефон" type="number">
-                <input name="email" required placeholder="Ваш E-mail" type="email">
+                <input name="name" placeholder="Ваше имя" type="text"> <!-- required с помощью плагига-->
+                <input name="number" placeholder="Ваш телефон"> <!-- type="number" для работы маски ввода убрать--><!-- required с помощью плагига-->
+                <input name="email" placeholder="Ваш E-mail" type="email"> <!-- required с помощью плагига-->
                 <button class="button button_submit">купить</button>
             </form>
         </div>
@@ -719,6 +719,8 @@
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

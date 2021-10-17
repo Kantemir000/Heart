@@ -8,6 +8,10 @@
         font-weight: 300px;
         color: #ffffff;
     }
+    label.error{ // всё находится в одном теге, поэтому без пробелов
+  
+        color: rgba(255, 255, 255, 0.87);     
+    }
 }
 
 @media (max-width: 991px){

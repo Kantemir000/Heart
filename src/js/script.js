@@ -78,4 +78,46 @@ $(document).ready(function(){
             $('.overlay, #order').fadeIn('slow');
         })
     });
+
+    /* Validate */
+
+    /* 1) */ /* $('.feed-form').validate(); */ //работает только на одной форме (работает на первом элементе с селектором который мы передали(feed-form))
+
+    /* 2) */ /* $('#consultation-form').validate();
+    $('#consultation form').validate();
+    $('#order form').validate(); */
+ 
+    /* 3) */
+    /* class error можем застилизовать  */
+    function validateForm (form){
+        $(form).validate({
+            rules: {
+                number: "required",
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                email: {
+                required: true,
+                email: true
+                }
+            },
+            messages: {
+                number: "Введите номер телефона",
+                name: {
+                    required: "Введите имя",
+                    minlength: jQuery.validator.format("Введите {0} символ(а)")
+                },
+                email: {
+                    required: "Введите почту",
+                    email: "Неверно введен адрес почты"
+                }
+            }
+        });
+    };   
+    validateForm('#consultation-form');
+    validateForm('#consultation form');
+    validateForm('#order form');
+
+    $('input[name=number]').mask("+7 (999) 999-99-99");
 }); 

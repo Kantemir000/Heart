@@ -38,6 +38,13 @@
         &_mini{
             min-height: 140px;
         }
+        .error{
+            border: 1px solid#c70101;
+        }
+        label.error{ // всё находится в одном теге, поэтому без пробелов
+            border: none;     
+            color: #4b4b4b;;     
+        }
     }
 }
 
