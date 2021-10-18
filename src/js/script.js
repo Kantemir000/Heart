@@ -92,7 +92,7 @@ $(document).ready(function(){
     function validateForm (form){
         $(form).validate({
             rules: {
-                number: "required",
+                phone: "required",
                 name: {
                     required: true,
                     minlength: 2
@@ -103,7 +103,7 @@ $(document).ready(function(){
                 }
             },
             messages: {
-                number: "Введите номер телефона",
+                phone: "Введите номер телефона",
                 name: {
                     required: "Введите имя",
                     minlength: jQuery.validator.format("Введите {0} символ(а)")
@@ -119,5 +119,22 @@ $(document).ready(function(){
     validateForm('#consultation form');
     validateForm('#order form');
 
-    $('input[name=number]').mask("+7 (999) 999-99-99");
+    /* Mask */
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
+
+    /* Отправка данных формы на почту  */
+    $('form').submit(function(e){ /* событие submit означает "подтверждаться", когда прошли все валидации у нас эта форма отправляется  */
+        e.preventDefault(); /* позволяет отменить стандартное поведение браузера */
+        $.ajax({
+            type: "POST", /* отдать данные серверу  */
+            url: "mailer/smart.php", /* обработчик, который будет обрабатывать данные всю операцию  */ 
+            data: $(this).serialize() /* data те данные, которые я хочу отправить на сервер, this работаем с тем чем работаем, если мы отправили вторую форму, мы работаем с теми данными, которые во второй форме, serialize данные подготовить перед отправкой на сервер*/
+        }).done(function(){ /* done мы выполнили операцию  */
+            $(this).find("input").val(""); /* find находим, val('') после отправки формы очистим все input */
+            $('#consultation, #order').fadeOut(); /* закрытие формы */
+            $('.overlay, #thanks').fadeIn('slow'); /* открытие модального окна спасибо */
+            $('form').trigger('reset'); /* все мои формы должны очиститься */
+        });
+        return false;/*  выполнение функции останавливается*/
+    });
 }); 
