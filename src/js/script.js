@@ -132,9 +132,26 @@ $(document).ready(function(){
         }).done(function(){ /* done мы выполнили операцию  */
             $(this).find("input").val(""); /* find находим, val('') после отправки формы очистим все input */
             $('#consultation, #order').fadeOut(); /* закрытие формы */
-            $('.overlay, #thanks').fadeIn('slow'); /* открытие модального окна спасибо */
+            $('.overlay, #thanks').fadeIn('slow'); /* открытие модального окна спасибо  slow плавное отображение*/
             $('form').trigger('reset'); /* все мои формы должны очиститься */
         });
         return false;/*  выполнение функции останавливается*/
     });
+    
+   /*  Smooth scroll and pageup */
+   $(window).scroll(function() { 
+       if ($(this).scrollTop() > 1600) { /*scrollTop отступ при скроллинге */
+            $('.pageup').fadeIn();
+       } else {
+            $('.pageup').fadeOut();
+       }
+   });
+
+   $("a[href=^'#']").click(function(){ /* взять все ссылки по определённым параметрам: a(ссылка)[атрибут], [href(ссылки) ^(которые начанаются с) #(решётки(потому что задавали и будем задавать локальные ссылки, которые начинаются с #))] */
+       var _href = $(this).attr("href"); /* _href переменная, this перём ссылку на которую нажали, attr("href") берём атрибут который находится непосредственно в href(у нас это #up)*/
+       $('html, body').animate({scrollTop: $(_href).offset().top+"px"}); /* анимируем html и body и долистываем до того элемента до которого нам нужно */
+       return false;
+   });
 }); 
+
+ 
