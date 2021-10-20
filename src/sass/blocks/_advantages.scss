@@ -32,6 +32,19 @@
             color: #ff0000;   
         }
     }
+    &__icon{
+        &_animated{
+            /* animation-name: heartbeat; */ /* имя keyframe */
+            /* animation-duration: 1s; */ /* продолжительность анимации */
+            /* animation-timing-function: ease-out; */ /* как будет развиваться анимация */
+            /* animation-iteration-count: infinite; */ /* сколько повторяться будет анимация */
+             /*  animation-delay: 5s; */ /* перед анимацией сколько не будет работать */
+             animation: heartbeat 1s ease-out infinite;
+            &:hover{
+                animation-play-state: paused;
+            }
+        }
+    }
 }
 
 @media (max-width: 991px){
