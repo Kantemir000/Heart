@@ -140,13 +140,17 @@
             padding-left: 19px;
             transform: translateX(0%);
             transition: 0.5s all;
-            list-style-type: none;
             &_active{
                 transform: translateX(-100%);
                 margin-left: 0;
             }
+        }
+        &__descr-list{
+            padding-left: 0;
+            margin-bottom: 0;
             li{
                 position: relative;
+                list-style-type: none;
                 font-size: 14px;
                 line-height: 1.2;
                 font-weight: 300;
