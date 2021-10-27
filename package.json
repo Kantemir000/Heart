@@ -1,25 +1,38 @@
 {
   "name": "heart",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Создание landing page по подбору пульсометра с использование HTML, SCSS, JS, gulp, mailer(smart.php) для отправки форм на почту. (Для отправки форм на почту заполнить данные пользователя в smart.php)",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kantemir000/Heart.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kantemir000/Heart/issues"
+  },
+  "homepage": "https://github.com/Kantemir000/Heart#readme",
   "devDependencies": {
     "browser-sync": "^2.27.5",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^2.3.0",
-    "gulp-rename": "^2.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.0.0",
     "gulp-sass": "^5.0.0",
-    "sass": "^1.38.0"
+    "sass": "^1.43.3"
+  },
+  "dependencies": {
+    "debug": "^4.3.2",
+    "gulp-rename": "^2.0.0"
   },
   "browserslist": [
-    "last 2 version",
+    "last 1 version",
     "> 1%",
     "maintained node versions",
     "not dead"

@@ -1,4 +1,10 @@
-@import "base/fonts";
+@import "libs/bootstrap-reboot.min";
+@import "libs/stylesheet";
+@import "libs/icomoon";
+@import "libs/slick";
+@import "libs/animate.min";
+
+@import "base/font-family";
 @import "base/container";
 @import "base/variables";
 @import "base/mixins"; 
